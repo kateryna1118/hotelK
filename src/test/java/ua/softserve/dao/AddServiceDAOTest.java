@@ -22,7 +22,7 @@ import ua.softserve.hotel.domain.AddService;
 public class AddServiceDAOTest {
  @Autowired
     private IAddServiceDAO addServiceDAO;
-
+@Ignore
     @Test
     public void testSave() throws Exception {
         AddService addService = new AddService();
@@ -37,7 +37,7 @@ public class AddServiceDAOTest {
         Assert.assertEquals(addService.getName(),
                 addServiceList.get(addServiceList.size() - 1).getName());
     }
-
+@Ignore
     @Test
     public void testGet() throws Exception {
 
