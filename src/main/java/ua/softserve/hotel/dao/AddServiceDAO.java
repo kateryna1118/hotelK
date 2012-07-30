@@ -10,7 +10,7 @@ import ua.softserve.hotel.domain.AddService;
  *
  * @author Kateryna
  */
-@Repository
+@Repository("AddServiceDAO")
 public class AddServiceDAO implements IAddServiceDAO {
 
     @Autowired

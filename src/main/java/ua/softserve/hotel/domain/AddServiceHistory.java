@@ -22,8 +22,8 @@ public class AddServiceHistory implements Serializable{
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     private HotelOrder order;
-    
-    
+
+
     //���������� ������ ��� ������
     @Column(name="AMOUNT", nullable=false)
     private double amount;
@@ -52,11 +52,11 @@ public class AddServiceHistory implements Serializable{
     public HotelOrder getOrder(){
 	return order;
     }
-    
+
     public void setOrder(HotelOrder ho){
 	this.order = ho;
     }
-    
+
     public AddService getAddService() {
         return addService;
     }

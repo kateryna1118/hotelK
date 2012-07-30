@@ -10,7 +10,7 @@ import ua.softserve.hotel.domain.HotelOrder;
  *
  * @author Kateryna
  */
-@Repository
+@Repository("OrderDAO")
 public class OrderDAO implements IOrderDAO {
 
     @Autowired
@@ -41,7 +41,7 @@ public class OrderDAO implements IOrderDAO {
     @SuppressWarnings("unchecked")
     public List<HotelOrder> getAllOrders() {
         List<HotelOrder> orders = sessionFactory.getCurrentSession().
-                createQuery("from Order").list();
+                createQuery("from Orders").list();
         return orders;
     }
 }

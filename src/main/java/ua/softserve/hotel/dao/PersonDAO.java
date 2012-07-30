@@ -14,7 +14,7 @@ import ua.softserve.hotel.domain.Person;
  *
  * @author Kateryna
  */
-@Repository
+@Repository("PersonDAO")
 public class PersonDAO implements IPersonDAO {
 
     @Autowired
@@ -28,7 +28,7 @@ public class PersonDAO implements IPersonDAO {
         sessionFactory.getCurrentSession().update(person);
     }
 
-    public void removePerson(Long id) {
+    public void removePerson(Integer id) {
         Person toDelete = (Person) sessionFactory.getCurrentSession().
                 get(Person.class, id);
         if (toDelete != null) {
@@ -36,7 +36,7 @@ public class PersonDAO implements IPersonDAO {
         }
     }
 
-    public Person getPerson(Long id) {
+    public Person getPerson(Integer id) {
         Person toReturn = (Person) sessionFactory.getCurrentSession().
                 get(Person.class, id);
         return toReturn;

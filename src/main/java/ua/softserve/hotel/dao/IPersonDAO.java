@@ -10,7 +10,7 @@ import ua.softserve.hotel.domain.Person;
 public interface IPersonDAO {
 	public void addPerson(Person person);
 	public void updatePerson(Person person);
-	public void removePerson(Long id);
-	public Person getPerson(Long id);
+	public void removePerson(Integer id);
+	public Person getPerson(Integer id);
 	public List<Person> getAllPersons();
 }

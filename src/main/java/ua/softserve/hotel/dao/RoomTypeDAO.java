@@ -10,23 +10,23 @@ import ua.softserve.hotel.domain.RoomType;
  *
  * @author Kateryna
  */
-@Repository
+@Repository("RoomTypeDAO")
 public class RoomTypeDAO implements IRoomTypeDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    
+
     public void addRoomType(RoomType roomType) {
        sessionFactory.getCurrentSession().save(roomType);
     }
 
-    
+
     public void updateRoomType(RoomType roomType) {
         sessionFactory.getCurrentSession().update(roomType);
     }
 
-    
+
     public void removeRoomType(Long id) {
         RoomType toDelete = (RoomType) sessionFactory.getCurrentSession().
 				get(RoomType.class, id);
@@ -35,17 +35,17 @@ public class RoomTypeDAO implements IRoomTypeDAO {
 		}
     }
 
-    
+
     public RoomType getRoomType(Long id) {
        RoomType toReturn = (RoomType) sessionFactory.getCurrentSession().
 				get(RoomType.class, id);
 		return toReturn;
     }
 
-    
+
     public List<RoomType> getAllRoomTypes() {
        List<RoomType> roomTypes = sessionFactory.getCurrentSession().
-				createQuery("from RoomType").list();
+				createQuery("from Room_Type").list();
 		return roomTypes;
 	}
 }

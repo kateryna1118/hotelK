@@ -10,23 +10,23 @@ import ua.softserve.hotel.domain.Role;
  *
  * @author Kateryna
  */
-@Repository("superVisorDao")
+@Repository("RoleDAO")
 public class RoleDAO implements IRoleDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    
+
     public void addRole(Role role) {
         sessionFactory.getCurrentSession().save(role);
     }
 
-    
+
     public void updateRole(Role role) {
         sessionFactory.getCurrentSession().update(role);
     }
 
-    
+
     public void removeRole(Long id) {
         Role toDelete = (Role) sessionFactory.getCurrentSession().
                 get(Role.class, id);
@@ -35,7 +35,7 @@ public class RoleDAO implements IRoleDAO {
         }
     }
 
-    
+
     public Role getRole(Long id) {
         Role toReturn = (Role) sessionFactory.getCurrentSession().
                 get(Role.class, id);
@@ -43,10 +43,10 @@ public class RoleDAO implements IRoleDAO {
     }
 
     @SuppressWarnings("unchecked")
-    
+
     public List<Role> getAllRoles() {
         List<Role> roles = sessionFactory.getCurrentSession().
-                createQuery("from SuperVisor").list();
+                createQuery("from Roles").list();
         return roles;
     }
 }

@@ -11,7 +11,7 @@ public class Person implements Serializable {
     @Id
     @Column(name = "PERSON_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false, name = "F_NAME")
     private String fName;
@@ -23,7 +23,7 @@ public class Person implements Serializable {
     private String email;
 
     @Column(name = "PHONE")
-    private int phone;
+    private String phone;
 
     @OneToOne(optional=false, cascade=CascadeType.ALL)
     @JoinColumn(name="USER_ID")
@@ -45,11 +45,11 @@ public class Person implements Serializable {
         this.fName = fName;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -61,11 +61,11 @@ public class Person implements Serializable {
         this.lName = lName;
     }
 
-    public int getPhon() {
+    public String getPhon() {
         return phone;
     }
 
-    public void setPhon(int phon) {
+    public void setPhon(String phon) {
         this.phone = phon;
     }
 

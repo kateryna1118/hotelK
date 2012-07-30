@@ -50,7 +50,7 @@ public class PersonDAOTest {
         List<Person> supplList = personDAO.getAllPersons();
 
         Person loadedPerson = supplList.get(supplList.size() - 1);
-        Long loadedId = loadedPerson.getId();
+        Integer loadedId = loadedPerson.getId();
         Assert.assertEquals(loadedPerson, personDAO.getPerson(loadedId));
     }
 }
